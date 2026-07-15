@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday, Joe 🎂</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff8f5;
+      color: #4b3b3b;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px 20px;
+    }
+
+    .card {
+      background: white;
+      max-width: 600px;
+      width: 100%;
+      padding: 45px 30px;
+      border-radius: 25px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    }
+
+    .small {
+      color: #d98c8c;
+      font-size: 14px;
+    }
+
+    h1 {
+      font-size: 42px;
+      margin: 15px 0 5px;
+    }
+
+    h1 span {
+      color: #ef7f91;
+    }
+
+    .date {
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+
+    .cake {
+      font-size: 70px;
+      margin: 20px;
+      animation: float 2s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    button {
+      border: none;
+      background: #ef7f91;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      background: #e76c80;
+    }
+
+    #message {
+      display: none;
+      margin-top: 35px;
+      line-height: 1.8;
+      animation: appear 1s ease;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .code {
+      background: #2b2b35;
+      color: #f7b2bd;
+      text-align: left;
+      padding: 20px;
+      border-radius: 15px;
+      margin: 25px 0;
+      font-family: monospace;
+      font-size: 14px;
+    }
+
+    .game {
+      font-size: 35px;
+      margin-top: 25px;
+    }
+
+    .heart {
+      color: #ef7f91;
+    }
+
+    .footer {
+      font-size: 13px;
+      margin-top: 35px;
+      color: #aaa;
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="page">
+
+    <div class="card">
+
+      <div class="small">for my favorite person ♡</div>
+
+      <div class="cake">🎂</div>
+
+      <h1>Happy Birthday, <span>Joe</span></h1>
+
+      <div class="date">16 July 1993</div>
+
+      <p>
+        I made this tiny corner of the internet just for you.
+      </p>
+
+      <p>
+        Nothing complicated.<br>
+        Just a little birthday surprise from someone far away. 🤍
+      </p>
+
+      <button onclick="openMessage()">
+        Open your message 💌
+      </button>
+
+      <div id="message">
+
+        <h2>Hi, Joe ♡</h2>
+
+        <p>
+          Happy birthday.
+        </p>
+
+        <p>
+          I hope this new chapter of your life brings you
+          more good days, peaceful moments, and plenty of reasons to smile.
+        </p>
+
+        <p>
+          Even though we're far from each other,
+          I still wanted to make something small for you today.
+        </p>
+
+        <div class="code">
+          const joe = {<br>
+          &nbsp;&nbsp;job: "Software Engineer",<br>
+          &nbsp;&nbsp;country: "Korea 🇰🇷",<br>
+          &nbsp;&nbsp;hobby: "Gaming 🎮",<br>
+          &nbsp;&nbsp;status: "Birthday Boy 🎂"<br>
+          };<br><br>
+
+          joe.level++;<br>
+          happiness += Infinity; ♡
+        </div>
+
+        <div class="game">🎮</div>
+
+        <p>
+          May your code have fewer bugs,<br>
+          your games have better teammates,<br>
+          and your days feel a little lighter.
+        </p>
+
+        <p>
+          Thank you for being you.
+        </p>
+
+        <p class="heart">
+          Happy birthday, Joe ♡
+        </p>
+
+        <div class="footer">
+          made with a little bit of code and a lot of care ♡
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <script>
+    function openMessage() {
+      document.getElementById("message").style.display = "block";
+
+      document.querySelector("button").style.display = "none";
+
+      setTimeout(() => {
+        document.getElementById("message").scrollIntoView({
+          behavior: "smooth"
+        });
+      }, 200);
+    }
+  </script>
+
+</body>
+</html>
