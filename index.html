@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -8,268 +9,358 @@
 
 <style>
 
-* {
-  box-sizing: border-box;
+*{
+  box-sizing:border-box;
 }
 
-html {
-  scroll-behavior: smooth;
+html{
+  scroll-behavior:smooth;
 }
 
-body {
-  margin: 0;
-  font-family: "Segoe UI", Arial, sans-serif;
-  color: #29486f;
+body{
+  margin:0;
+  font-family:"Segoe UI",Arial,sans-serif;
+  color:#29486f;
   background:
-    radial-gradient(circle at 15% 20%, rgba(255,255,255,.8), transparent 25%),
-    radial-gradient(circle at 85% 70%, rgba(125,190,235,.25), transparent 30%),
-    linear-gradient(135deg, #dcefff, #f4faff, #d4ebff);
-  min-height: 100vh;
-  overflow-x: hidden;
+  radial-gradient(circle at 15% 20%,rgba(255,255,255,.8),transparent 25%),
+  radial-gradient(circle at 85% 70%,rgba(125,190,235,.25),transparent 30%),
+  linear-gradient(135deg,#dcefff,#f4faff,#d4ebff);
+  min-height:100vh;
+  overflow-x:hidden;
 }
 
-/* BACKGROUND */
 
-.bg-symbol {
-  position: fixed;
-  bottom: -80px;
-  color: rgba(70, 145, 205, 0.13);
-  font-family: Consolas, monospace;
-  font-weight: bold;
-  animation: floatUp linear infinite;
-  z-index: 0;
-  pointer-events: none;
-  user-select: none;
-}
+/* FLOATING BACKGROUND */
 
-@keyframes floatUp {
+.bg-symbol{
 
-  0% {
-    transform: translateY(0) rotate(-10deg);
-    opacity: 0;
-  }
-
-  15% {
-    opacity: 1;
-  }
-
-  85% {
-    opacity: 1;
-  }
-
-  100% {
-    transform: translateY(-120vh) rotate(15deg);
-    opacity: 0;
-  }
+position:fixed;
+bottom:-80px;
+color:rgba(70,145,205,.13);
+font-family:Consolas,monospace;
+font-weight:bold;
+animation:floatUp linear infinite;
+z-index:0;
+pointer-events:none;
 
 }
 
-.container {
-  width: 92%;
-  max-width: 950px;
-  margin: auto;
-  padding: 40px 0;
-  position: relative;
-  z-index: 1;
+
+@keyframes floatUp{
+
+0%{
+transform:translateY(0) rotate(-10deg);
+opacity:0;
 }
 
-.card {
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,.7);
-  border-radius: 28px;
-  padding: 50px 35px;
-  margin-bottom: 25px;
-  text-align: center;
-  box-shadow: 0 15px 45px rgba(65, 135, 190, 0.15);
+15%{
+opacity:1;
 }
 
-.small-title {
-  color: #4f9de0;
-  letter-spacing: 1px;
+85%{
+opacity:1;
 }
 
-.cake {
-  font-size: 70px;
-  margin: 25px;
-  animation: cakeFloat 2.5s ease-in-out infinite;
+100%{
+transform:translateY(-120vh) rotate(15deg);
+opacity:0;
 }
-
-@keyframes cakeFloat {
-
-  50% {
-    transform: translateY(-10px);
-  }
 
 }
 
-h1 {
-  font-size: 50px;
-  margin: 10px 0;
-  color: #243f65;
+
+
+.container{
+
+width:92%;
+max-width:950px;
+margin:auto;
+padding:40px 0;
+position:relative;
+z-index:1;
+
 }
 
-.blue {
-  color: #58a5e7;
+
+
+.card{
+
+background:rgba(255,255,255,.88);
+backdrop-filter:blur(10px);
+border-radius:28px;
+padding:50px 35px;
+margin-bottom:25px;
+text-align:center;
+box-shadow:
+0 15px 45px rgba(65,135,190,.15);
+
 }
 
-.birthdate {
-  font-weight: bold;
-  font-size: 20px;
-  color: #438dce;
+
+
+.small-title{
+
+color:#4f9de0;
+letter-spacing:1px;
+
 }
 
-.intro {
-  line-height: 1.8;
-  margin: 35px auto;
-  max-width: 600px;
+
+
+.cake{
+
+font-size:70px;
+margin:25px;
+animation:cakeFloat 2.5s ease-in-out infinite;
+
 }
 
-button {
-  border: none;
-  padding: 17px 30px;
-  border-radius: 50px;
-  font-size: 16px;
-  cursor: pointer;
-  background: linear-gradient(135deg, #62afea, #438dd0);
-  color: white;
-  box-shadow: 0 8px 20px rgba(56, 137, 205, 0.25);
-  transition: .3s;
+
+@keyframes cakeFloat{
+
+50%{
+transform:translateY(-10px);
 }
 
-button:hover {
-  transform: translateY(-3px);
 }
 
-.music-btn {
-  position: fixed;
-  right: 18px;
-  bottom: 18px;
-  z-index: 100;
-  padding: 12px 18px;
-  font-size: 13px;
+
+
+h1{
+
+font-size:50px;
+margin:10px 0;
+color:#243f65;
+
 }
 
-.hidden {
-  display: none;
+
+.blue{
+
+color:#58a5e7;
+
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 25px;
+
+.birthdate{
+
+font-weight:bold;
+font-size:20px;
+color:#438dce;
+
 }
 
-.code-box {
-  background: #173657;
-  color: #dff2ff;
-  padding: 25px;
-  border-radius: 20px;
-  text-align: left;
-  overflow-x: auto;
+
+
+.intro{
+
+line-height:1.8;
+margin:35px auto;
+max-width:600px;
+
 }
 
-.code-box pre {
-  white-space: pre-wrap;
-  line-height: 1.6;
+
+
+button{
+
+border:none;
+padding:17px 30px;
+border-radius:50px;
+font-size:16px;
+cursor:pointer;
+background:linear-gradient(135deg,#62afea,#438dd0);
+color:white;
+box-shadow:0 8px 20px rgba(56,137,205,.25);
+transition:.3s;
+
 }
 
-.stats {
-  background: #edf7ff;
-  border-radius: 18px;
-  padding: 25px;
-  margin: 25px 0;
-  line-height: 2;
+
+
+button:hover{
+
+transform:translateY(-3px);
+
 }
 
-.letter {
-  text-align: left;
-  line-height: 2;
-  white-space: pre-line;
-  margin-top: 35px;
-  word-break: keep-all;
+
+
+.music-btn{
+
+position:fixed;
+right:18px;
+bottom:18px;
+z-index:100;
+padding:12px 18px;
+font-size:13px;
+
 }
 
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 22px;
-  margin-top: 35px;
+
+
+.hidden{
+
+display:none;
+
 }
 
-.photo {
-  background: white;
-  padding: 12px 12px 25px;
-  border-radius: 18px;
-  box-shadow: 0 10px 25px rgba(48, 119, 180, 0.15);
-  transform: rotate(-1deg);
+
+
+.grid{
+
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:25px;
+
 }
 
-.photo:nth-child(even) {
-  transform: rotate(1deg);
+
+
+.code-box{
+
+background:#173657;
+color:#dff2ff;
+padding:25px;
+border-radius:20px;
+text-align:left;
+overflow-x:auto;
+
 }
 
-.photo img {
-  width: 100%;
-  height: 350px;
-  object-fit: cover;
-  border-radius: 12px;
+
+
+.code-box pre{
+
+white-space:pre-wrap;
+line-height:1.6;
+
 }
 
-.photo p {
-  margin-bottom: 0;
-  color: #5b8db8;
+
+
+.stats{
+
+background:#edf7ff;
+border-radius:18px;
+padding:25px;
+margin:25px 0;
+line-height:2;
+
 }
 
-.video-box {
-  margin-top: 35px;
+
+
+.letter{
+
+text-align:left;
+line-height:2;
+white-space:pre-line;
+margin-top:35px;
+word-break:keep-all;
+
 }
 
-video {
-  width: 100%;
-  max-width: 650px;
-  border-radius: 20px;
-  box-shadow: 0 15px 35px rgba(48, 119, 180, .2);
+
+.gallery{
+
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:22px;
+margin-top:35px;
+
 }
 
-.footer {
-  text-align: center;
-  padding: 35px;
-  color: #629bd0;
+
+
+.photo{
+
+background:white;
+padding:12px 12px 25px;
+border-radius:18px;
+box-shadow:0 10px 25px rgba(48,119,180,.15);
+
 }
 
-@media (max-width: 650px) {
 
-  h1 {
-    font-size: 36px;
-  }
 
-  .card {
-    padding: 35px 20px;
-  }
+.photo img{
 
-  .grid,
-  .gallery {
-    grid-template-columns: 1fr;
-  }
+width:100%;
+height:350px;
+object-fit:cover;
+border-radius:12px;
 
-  .photo img {
-    height: 400px;
-  }
+}
+
+
+
+.video-box{
+
+margin-top:35px;
+
+}
+
+
+
+video{
+
+width:100%;
+max-width:650px;
+border-radius:20px;
+
+}
+
+
+
+.footer{
+
+text-align:center;
+padding:35px;
+color:#629bd0;
+
+}
+
+
+@media(max-width:650px){
+
+h1{
+font-size:36px;
+}
+
+
+.grid,
+.gallery{
+
+grid-template-columns:1fr;
+
+}
+
+
+.photo img{
+
+height:400px;
+
+}
 
 }
 
 </style>
+
 </head>
 
 <body>
 
+
 <audio id="music" loop>
-  <source src="music.mp3" type="audio/mpeg">
+
+<source src="music.mp3" type="audio/mpeg">
+
 </audio>
 
+
 <button class="music-btn" onclick="toggleMusic()">
-♫ Music Off
+♫ Turn On Music
 </button>
 
 
@@ -278,43 +369,61 @@ video {
 
 <section class="card">
 
+
 <div class="small-title">
+
 생일 축하해, 선익아 💙
+
 </div>
+
 
 <div class="cake">
 🎂
 </div>
 
+
 <h1>
-Happy Birthday, <span class="blue">Joe</span>
+
+Happy Birthday,
+<span class="blue">Joe</span>
+
 </h1>
 
+
 <div class="birthdate">
+
 16 July 1993
+
 </div>
+
 
 <div class="intro">
 
-I know we're far away from each other.<br>
+I know we're far away from each other.
+
+<br><br>
 
 So I made you a tiny place on the internet.
 
 <br><br>
 
-Nothing fancy.<br>
+Nothing fancy.
+
+<br>
 
 Just something made especially for you. ♡
 
 </div>
 
+
 <button onclick="openSurprise()">
+
 💌 Open your birthday surprise ♡
+
 </button>
 
+
 </section>
-
-
 <div id="surprise" class="hidden">
 
 
@@ -327,33 +436,48 @@ Just something made especially for you. ♡
 💻
 </div>
 
+
 <h2>
 joe.js ♡
 </h2>
+
 
 <div class="code-box">
 
 <pre>
 const joe = {
+
   born: "16 July 1993",
+
   country: "Korea 🇰🇷",
+
   job: "Software Engineer",
+
   hobby: "Gaming 🎮",
+
   level: 33,
+
   special: true
+
 };
 
-function birthdayWish() {
+
+function birthdayWish(){
 
   joe.happiness = Infinity;
+
   joe.luck = Infinity;
+
   joe.bugs = 0;
+
 
   return "Happy Birthday Joe ♡";
 
 }
 
+
 birthdayWish();
+
 </pre>
 
 </div>
@@ -361,15 +485,19 @@ birthdayWish();
 </section>
 
 
+
 <section class="card">
+
 
 <div style="font-size:50px">
 🎮
 </div>
 
+
 <h2>
 Level 33 Unlocked ♡
 </h2>
+
 
 <div class="stats">
 
@@ -378,11 +506,15 @@ Level 33 Unlocked ♡
 <br><br>
 
 +100 Wisdom<br>
+
 +100 Patience<br>
+
 +999 Luck<br>
+
 +∞ Happiness
 
 </div>
+
 
 <p style="line-height:1.8">
 
@@ -390,120 +522,241 @@ Hope you become very, very rich 💸
 
 <br><br>
 
-May your code have fewer bugs,<br>
+May your code have fewer bugs,
+
+<br>
 
 and your days feel a little lighter. ♡
 
 </p>
 
+
 </section>
 
 
 </div>
 
 
+
 <section class="card">
 
+
 <div style="font-size:50px">
+
 💌
+
 </div>
 
+
 <h2>
+
 A Letter For You ♡
+
 </h2>
 
+
 <p>
+
 There's one more thing I want you to read.
+
 </p>
 
+
 <button onclick="showLetter()">
+
 Open my letter 💙
+
 </button>
+
 
 
 <div id="letter" class="letter hidden">
 
+
 생일 축하해, 선익아. ❤️
+
 
 오늘은 누구보다 먼저 생일을 축하해 주고 싶었어.
 
+
 내 삶에 와줘서 정말 고마워.
-멀리 떨어져 있어도 항상 나를 아껴 주고, 이해해 주고, 사랑해 줘서 고마워.
+
+멀리 떨어져 있어도 항상 나를 아껴 주고,
+
+이해해 주고, 사랑해 줘서 고마워.
+
 
 선익이는 정말 다정하고 따뜻한 사람이야.
-항상 나를 배려해 주고, 힘이 되어 줘서 고마워.
 
-가끔은 조금 고집을 부릴 때도 있지만, 일이 힘들고 많이 지쳤을 때 그런 모습이 나온다는 걸 알아.
+항상 나를 배려해 주고,
+
+힘이 되어 줘서 고마워.
+
+
+가끔은 조금 고집을 부릴 때도 있지만,
+
+일이 힘들고 많이 지쳤을 때
+
+그런 모습이 나온다는 걸 알아.
+
 그래서 나는 그런 모습도 있는 그대로 이해하고 사랑해.
 
-소프트웨어 엔지니어로 열심히 일하는 선익이가 정말 자랑스러워.
-항상 최선을 다하는 모습이 멋있지만, 너무 무리하지 않았으면 좋겠어.
-바쁠수록 건강도 잘 챙기고, 충분히 쉬었으면 좋겠어.
+
+소프트웨어 엔지니어로 열심히 일하는
+
+선익이가 정말 자랑스러워.
+
+
+항상 최선을 다하는 모습이 멋있지만,
+
+너무 무리하지 않았으면 좋겠어.
+
+바쁠수록 건강도 잘 챙기고,
+
+충분히 쉬었으면 좋겠어.
+
 
 미안해.
-올해는 더 좋은 선물이나 특별한 생일을 준비하지 못했어.
-지금 나는 새로운 일을 찾고 있어서 마음처럼 해 줄 수 있는 게 많지 않았어.
 
-그래도 내가 준비한 셔츠를 입을 때마다 한 번쯤은 내 생각이 났으면 좋겠어.
-비록 멀리 떨어져 있어도 내 마음은 언제나 선익이 곁에 있으니까.
+올해는 더 좋은 선물이나
 
-장거리 연애는 쉽지 않지만, 나는 우리를 믿어.
-조금 천천히 가더라도 우리는 같은 방향을 바라보며 함께 걸어가고 있다고 믿어.
+특별한 생일을 준비하지 못했어.
+
+
+지금 나는 새로운 일을 찾고 있어서
+
+마음처럼 해 줄 수 있는 게 많지 않았어.
+
+
+그래도 내가 준비한 셔츠를 입을 때마다
+
+한 번쯤은 내 생각이 났으면 좋겠어.
+
+
+비록 멀리 떨어져 있어도
+
+내 마음은 언제나 선익이 곁에 있으니까.
+
+
+장거리 연애는 쉽지 않지만,
+
+나는 우리를 믿어.
+
+
+조금 천천히 가더라도
+
+우리는 같은 방향을 바라보며
+
+함께 걸어가고 있다고 믿어.
+
 
 항상 내 곁에 있어 줘서 고마워.
-언제나 우리를 믿어 줘서 고마워.
-그리고 내 하루를 더 따뜻하고 행복하게 만들어 줘서 정말 고마워.
 
-33번째 생일, 진심으로 축하해.
+언제나 우리를 믿어 줘서 고마워.
+
+
+그리고 내 하루를 더 따뜻하고
+
+행복하게 만들어 줘서 정말 고마워.
+
+
+33번째 생일,
+
+진심으로 축하해.
+
 
 항상 건강하고,
+
 많이 웃고,
+
 매일이 행복으로 가득했으면 좋겠어.
+
 
 내 소원은 하나야.
 
-언젠가는 지금의 이 거리도 아름다운 추억이 되고,
-우리 둘이 함께 새로운 시간을 만들어 갈 수 있으면 좋겠어.
+
+언젠가는 지금의 이 거리도
+
+아름다운 추억이 되고,
+
+
+우리 둘이 함께 새로운 시간을
+
+만들어 갈 수 있으면 좋겠어.
+
 
 그날이 올 때까지 나도 계속 노력할게.
-그리고 언제나 선익이를 응원하고, 우리를 믿을게.
+
+
+그리고 언제나 선익이를 응원하면서
+
+우리의 미래를 믿고 기다릴게.
+
 
 다시 한 번 생일 진심으로 축하해.
 
+
 사랑해. ❤️
+
 
 — 디타
 
+
 </div>
+
 
 </section>
 
 
+
+
+
 <section class="card">
 
+
 <div style="font-size:50px">
+
 📷
+
 </div>
 
+
 <h2>
+
 Our Little Memories ♡
+
 </h2>
+
 
 <p style="line-height:1.8">
 
-멀리 있어도, 우리의 순간들은 여기 있어 ♡
+
+멀리 있어도,
+
+우리의 순간들은 여기 있어 ♡
+
 
 <br><br>
 
-Different places, different days.<br>
 
-But somehow, you're in so many of my favorite memories.
+Different places, different days.
+
+<br>
+
+
+But somehow,
+
+you're in so many of my favorite memories.
 
 </p>
 
+
 <button onclick="showGallery()">
+
 📷 Open our memories ♡
+
 </button>
+
 
 
 <div id="gallery" class="hidden">
@@ -517,10 +770,13 @@ But somehow, you're in so many of my favorite memories.
 <img src="photo1.jpeg">
 
 <p>
+
 one of my favorite days ♡
+
 </p>
 
 </div>
+
 
 
 <div class="photo">
@@ -528,10 +784,13 @@ one of my favorite days ♡
 <img src="photo2.jpeg">
 
 <p>
+
 still makes me smile
+
 </p>
 
 </div>
+
 
 
 <div class="photo">
@@ -539,10 +798,13 @@ still makes me smile
 <img src="photo3.jpeg">
 
 <p>
+
 you & me ♡
+
 </p>
 
 </div>
+
 
 
 <div class="photo">
@@ -550,48 +812,63 @@ you & me ♡
 <img src="photo4.jpeg">
 
 <p>
+
 worth the distance 💙
+
 </p>
 
 </div>
 
 
+
 </div>
+
 
 
 <div class="video-box">
 
+
 <h2>
+
 One more memory... ♡
+
 </h2>
 
+
 <p>
+
 Press play 🎬
+
 </p>
+
 
 <video id="memoryVideo" controls>
 
+
 <source src="video.mp4" type="video/mp4">
+
 
 </video>
 
+
 </div>
 
 
 </div>
+
 
 </section>
-
-
 <section class="card">
 
 <div style="font-size:55px">
 💙
 </div>
 
+
 <h2>
 Happy Birthday, Joe.
 </h2>
+
 
 <p style="line-height:2">
 
@@ -599,7 +876,9 @@ From far away,<br>
 
 I'm always cheering for you.
 
+
 <br><br>
+
 
 Stay healthy.<br>
 
@@ -607,41 +886,77 @@ Smile a lot.<br>
 
 And please be happy.
 
+
 </p>
+
 
 <h2>
+
 생일 축하해, 선익아 ♡
+
 </h2>
 
+
 <p>
+
 사랑해. 💙
+
 </p>
+
 
 </section>
 
 
+
 <div class="footer">
+
 
 More memories are still loading... ♡
 
+
 <br><br>
+
 
 ourStory.continue();
 
+
 <br><br>
+
 
 &lt;/made_with_code_and_love&gt; 💙
 
-</div>
+
+<br><br>
+
+
+for my favorite person,
+
+
+<br>
+
+
+from D ♡
+
+
+<br>
+
+
+16/07/2026
 
 
 </div>
 
 
+
 </div>
+
+
+</div>
+
 
 
 <script>
+
 
 const music = document.getElementById("music");
 
@@ -652,179 +967,281 @@ const video =
 document.getElementById("memoryVideo");
 
 
-function openSurprise() {
 
-  document
-  .getElementById("surprise")
-  .classList.remove("hidden");
-
-  music.play()
-  .then(() => {
-
-    musicButton.innerHTML =
-    "♫ Music On";
-
-  })
-  .catch(() => {});
+function openSurprise(){
 
 
-  setTimeout(() => {
-
-    document
-    .getElementById("surprise")
-    .scrollIntoView({
-
-      behavior: "smooth"
-
-    });
-
-  }, 200);
-
-}
+document
+.getElementById("surprise")
+.classList.remove("hidden");
 
 
-function toggleMusic() {
 
-  if (music.paused) {
+music.play()
 
-    music.play();
-
-    musicButton.innerHTML =
-    "♫ Music On";
-
-  } else {
-
-    music.pause();
-
-    musicButton.innerHTML =
-    "♫ Music Off";
-
-  }
-
-}
+.then(()=>{
 
 
-function showLetter() {
-
-  const letter =
-  document.getElementById("letter");
-
-  letter.classList.toggle("hidden");
+musicButton.innerHTML =
+"♫ Music On";
 
 
-  if (!letter.classList.contains("hidden")) {
+})
 
-    setTimeout(() => {
-
-      letter.scrollIntoView({
-
-        behavior: "smooth",
-        block: "start"
-
-      });
-
-    }, 200);
-
-  }
-
-}
+.catch(()=>{});
 
 
-function showGallery() {
 
-  const gallery =
-  document.getElementById("gallery");
-
-  gallery.classList.toggle("hidden");
+setTimeout(()=>{
 
 
-  if (!gallery.classList.contains("hidden")) {
+document
+.getElementById("surprise")
+.scrollIntoView({
 
-    setTimeout(() => {
-
-      gallery.scrollIntoView({
-
-        behavior: "smooth",
-        block: "start"
-
-      });
-
-    }, 200);
-
-  }
-
-}
-
-
-video.addEventListener("play", function() {
-
-  music.pause();
-
-  musicButton.innerHTML =
-  "♫ Music Off";
+behavior:"smooth"
 
 });
 
 
-video.addEventListener("ended", function() {
+},200);
 
-  music.play();
 
-  musicButton.innerHTML =
-  "♫ Music On";
+
+}
+
+
+
+
+function toggleMusic(){
+
+
+if(music.paused){
+
+
+music.play();
+
+
+musicButton.innerHTML =
+"♫ Music On";
+
+
+}
+
+else{
+
+
+music.pause();
+
+
+musicButton.innerHTML =
+"♫ Music Off";
+
+
+}
+
+
+}
+
+
+
+
+
+function showLetter(){
+
+
+const letter =
+document.getElementById("letter");
+
+
+letter.classList.toggle("hidden");
+
+
+
+if(!letter.classList.contains("hidden")){
+
+
+setTimeout(()=>{
+
+
+letter.scrollIntoView({
+
+behavior:"smooth",
+
+block:"start"
 
 });
+
+
+},200);
+
+
+}
+
+
+}
+
+
+
+
+
+function showGallery(){
+
+
+const gallery =
+document.getElementById("gallery");
+
+
+gallery.classList.toggle("hidden");
+
+
+
+if(!gallery.classList.contains("hidden")){
+
+
+setTimeout(()=>{
+
+
+gallery.scrollIntoView({
+
+behavior:"smooth",
+
+block:"start"
+
+});
+
+
+},200);
+
+
+}
+
+
+}
+
+
+
+
+
+if(video){
+
+
+video.addEventListener("play",()=>{
+
+
+music.pause();
+
+
+musicButton.innerHTML =
+"♫ Music Off";
+
+
+});
+
+
+
+
+video.addEventListener("ended",()=>{
+
+
+music.play();
+
+
+musicButton.innerHTML =
+"♫ Music On";
+
+
+});
+
+
+}
+
+
+
 
 
 const symbols = [
 
-  "♡",
-  "♡",
-  "♥",
-  "</>",
-  "{ }",
-  "01",
-  "const",
-  "✦",
-  "✧",
-  "🎮",
-  "💙"
+
+"♡",
+
+"♡",
+
+"♥",
+
+"</>",
+
+"{ }",
+
+"01",
+
+"const",
+
+"✦",
+
+"✧",
+
+"🎮",
+
+"💙"
+
 
 ];
 
 
-for (let i = 0; i < 38; i++) {
 
-  const symbol =
-  document.createElement("div");
 
-  symbol.className =
-  "bg-symbol";
+for(let i=0;i<38;i++){
 
-  symbol.innerHTML =
-  symbols[
-    Math.floor(
-      Math.random() * symbols.length
-    )
-  ];
 
-  symbol.style.left =
-  Math.random() * 100 + "vw";
+const symbol =
+document.createElement("div");
 
-  symbol.style.fontSize =
-  (14 + Math.random() * 25) + "px";
 
-  symbol.style.animationDuration =
-  (10 + Math.random() * 15) + "s";
+symbol.className =
+"bg-symbol";
 
-  symbol.style.animationDelay =
-  (-Math.random() * 20) + "s";
 
-  document.body.appendChild(symbol);
+symbol.innerHTML =
+symbols[
+Math.floor(
+Math.random()*symbols.length
+)
+];
+
+
+
+symbol.style.left =
+Math.random()*100+"vw";
+
+
+
+symbol.style.fontSize =
+(14+Math.random()*25)+"px";
+
+
+
+symbol.style.animationDuration =
+(10+Math.random()*15)+"s";
+
+
+
+symbol.style.animationDelay =
+(-Math.random()*20)+"s";
+
+
+
+document.body.appendChild(symbol);
+
+
 
 }
 
+
+
 </script>
 
+
 </body>
+
 </html>
